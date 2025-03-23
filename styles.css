@@ -6,7 +6,12 @@ body {
     background: #FEF6EB;
     color: #333;
 }
-
+.spectral-regular {
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -1px;
+  }
 .poppins-regular {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -124,20 +129,11 @@ nav ul li a:hover {
     padding: 40px 20px; /* Adds spacing around the section */
     position: relative;
     overflow: hidden;
+    color: #822B22;
 }
-.hero img {
-    width: 80%; /* Adjusts the image width */
-    max-width: 600px; /* Prevents it from becoming too large on wide screens */
-    height: auto; /* Keeps aspect ratio */
-    border-radius: 10px; /* Adds soft corners for a better aesthetic */
-    margin-bottom: 20px; /* Adds space below the image */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    object-position: center; /* Keeps the focal point in the center of the image */
-}
-
 
 .hero h1 {
-    font-size: 36px;
+    font-size: 24px;
     text-transform: capitalize;
 }
 
@@ -222,7 +218,7 @@ header img {
         max-width: none;
     }
     .hero h1 {
-        font-size: 28px;
+        font-size: 24px;
     }
     .hero p {
         font-size: 16px;
