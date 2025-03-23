@@ -9,23 +9,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
-
+    <script src="script.js"></script>
     <div class="announcement-bar poppins-regular">
         <p>Shop open Wednesday's 9am-11am.</p>
     </div>
 
 
-    <!-- Header -->
     <header>
         <div class="socials">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
-
+    
         <div class="main-heading">
             <img class="logo" src="images/little-tempus-primary-logo-terracotta-rgb-2000px-w-300ppi.png" alt="Little Tempus Logo">
+            
+            <div class="hamburger">&#9776;</div> <!-- Hamburger Menu -->
+            
             <nav>
                 <ul class="poppins-regular">
                     <li><a href="#">HOME</a></li>
@@ -34,21 +37,26 @@
                     <li><a href="#">MASSAGE</a></li>
                     <li><a href="#">CONSULT FORM</a></li>
                     <li><a href="#">CONTACT</a></li>
+                    <li class="close-menu" id="close-menu">
+                        <a href="javascript:void(0);" id="close-hamburger">&#9776;</a>
+                    </li>
                 </ul>
             </nav>
         </div>
+        
         <div class="book-now">
-            <a href="#" class="book-now poppins-regular">Book Now</a></li>
+            <a href="#" class="poppins-regular">Book Now</a>
         </div>
-        
-        
-        
     </header>
+    
+    
+    <div class="img-renee"></div>
+
     <!-- Hero Section -->
     <section class="hero">
-        <!-- <img src="images/LttleTempus-309.jpg" alt=""> -->
         <h1 class="poppins-regular">WELCOME TO LITTLE TEMPUS</h1>
-        <p class="poppins-regular">Luxury beauty treatments designed just for you.</p>
+        <p class="poppins-regular">Located in the heart of Sun Country, we offer a wide range of beauty services designed to help you look and feel your best. We use only the brands we love and trust—Pure Fiji, Dermalogica, Azure Tan, and Youngblood Mineral Cosmetics—ensuring every treatment is a pampering experience.</p>
+        <p class="poppins-regular">Book your appointment today and treat yourself to the beauty you deserve.</p>  
     </section>
 
     <!-- Services Section -->

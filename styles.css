@@ -45,6 +45,10 @@ header {
     color:#822B22;
 }
 
+.socials a:hover {
+    color: #c29d83;
+}
+
 .main-heading {
     flex-direction: column;
     justify-content: center;
@@ -71,6 +75,11 @@ nav ul li a {
     text-decoration: none;
     color: #B87456;
 }
+nav ul li a:hover {
+    color: #822B22;
+    border-radius: 30px;
+}
+
 
 .book-now {
     display: flex;
@@ -82,27 +91,50 @@ nav ul li a {
     text-transform: uppercase;
 }
 .book-now a {
+    color: #822B22;
     border: solid 2px #822B22;
     border-radius: 30px;
     text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
 }
 
+
+.book-now a:hover {
+    background-color: #822B22;
+    color: #f8f3ee;
+}
+.img-renee {
+    padding: 40px 20px; /* Adds spacing around the section */
+    position: relative;
+    overflow: hidden;
+    background-image: url('images/renae_picture.jpg'); /* Add your image here */
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center center; /* Keeps the focal point in the middle */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    height: 100vh; /* Adjust the height to ensure it's visible */
+}
 /* Hero Section */
 .hero {
-    background: url('spa-background.jpg') no-repeat center center/cover;
-    height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color:#822B22;
     text-align: center;
-    text-transform: capitalize;
+    padding: 40px 20px; /* Adds spacing around the section */
+    position: relative;
+    overflow: hidden;
 }
 .hero img {
-    max-width: 100%;
-    height: auto;
+    width: 80%; /* Adjusts the image width */
+    max-width: 600px; /* Prevents it from becoming too large on wide screens */
+    height: auto; /* Keeps aspect ratio */
+    border-radius: 10px; /* Adds soft corners for a better aesthetic */
+    margin-bottom: 20px; /* Adds space below the image */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-position: center; /* Keeps the focal point in the center of the image */
 }
+
 
 .hero h1 {
     font-size: 36px;
@@ -110,7 +142,8 @@ nav ul li a {
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 16px;
+    max-width: 600px; /* Prevents text from stretching too wide */
 }
 
 /* Services */
@@ -151,4 +184,99 @@ header img {
     max-width: 100%;
     max-height: 130px;
     border: 0;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    /* Header */
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 10px;
+    }
+    .socials {
+        gap: 5vw;
+        justify-content: center;
+    }
+    .main-heading nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+    .book-now {
+        font-size: 80%;
+        justify-content: center;
+    }
+    .img-renee {
+        height: 20vh; /* Only take up half of the viewport height on mobile */
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centers the image vertically */
+    }
+    /* Hero Section */
+    .hero {
+        padding: 20px;
+    }
+    .hero img {
+        width: 100%;
+        max-width: none;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Services */
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service {
+        width: 90%;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Navigation (Hamburger Menu) */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #f8f3ee;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    nav ul.show {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #822B22;
+        text-align: center;
+        padding: 10px;
+    }
+    .close-menu {
+        display: none; /* Hide close icon by default */
+    }
+    nav ul.show .close-menu {
+        display: block; /* Show close icon when menu is open */
+    }
+}
+
+/* Hide hamburger on larger screens */
+@media screen and (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
 }
