@@ -1,0 +1,154 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #FEF6EB;
+    color: #333;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.announcement-bar {
+    max-height: 50px;
+    background-color: #A34F2A;
+    margin: 0px;
+    padding: 12px;
+    color: white;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 20px;
+    background: #f8f3ee;
+    border: solid 5px #822B22;
+}
+.socials {
+    display: flex;
+    flex-direction: row;
+    gap: 8vw;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.socials a {
+    font-size: 1.5rem;
+    color:#822B22;
+}
+
+.main-heading {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #B87456;
+}
+
+.book-now {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+    color:#822B22;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.book-now a {
+    border: solid 2px #822B22;
+    border-radius: 30px;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background: url('spa-background.jpg') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#822B22;
+    text-align: center;
+    text-transform: capitalize;
+}
+.hero img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    font-size: 36px;
+    text-transform: capitalize;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Services */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+}
+
+.service {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #f8f3ee;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #c29d83;
+    text-decoration: none;
+}
+header img {
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+    max-width: 100%;
+    max-height: 130px;
+    border: 0;
+}
