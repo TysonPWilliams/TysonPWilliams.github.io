@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const browsLashesCard = document.getElementById("brows-lashes");
+    const flipCards = document.querySelectorAll(".flip-card");
 
-    browsLashesCard.addEventListener("click", function () {
-        browsLashesCard.classList.toggle("flipped");
+    flipCards.forEach(card => {
+        card.addEventListener("click", function () {
+            this.classList.toggle("flipped");
+        });
     });
 });

@@ -151,14 +151,70 @@ nav ul li a:hover {
     justify-content: center;
 }
 
+/* Styling for the .service container */
 .service {
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    width: 250px; /* Same size as other service cards */
     text-align: center;
 }
+
+/* Flip card container */
+.flip-card {
+    perspective: 1000px; /* Create a 3D space for the flip effect */
+    width: 100%;         /* Make it fit the .service container */
+    height: 300px;       /* Adjust height to match other .service cards */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Inner part of the flip card */
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Enable 3D effect */
+    transition: transform 0.6s ease;
+    border-radius: 8px; /* Keep rounded corners */
+    position: relative;
+}
+
+/* Front of the flip card */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back when flipped */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; /* Ensure the corners stay rounded */
+}
+
+/* Front side background styling */
+.flip-card-front {
+    background: linear-gradient(135deg, #822B22 0%, #A34F2A 100%);
+    color: white;
+    padding: 10px;
+}
+
+/* Back side background styling */
+.flip-card-back {
+    background: linear-gradient(135deg, #A34F2A 0%, #822B22 100%);
+    color: white;
+    padding: 10px;
+    transform: rotateY(180deg); /* Initially hidden behind the front */
+}
+
+/* Flip effect when the card is clicked */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
+
 
 /* Footer */
 footer {
@@ -180,97 +236,6 @@ header img {
     max-width: 100%;
     max-height: 130px;
     border: 0;
-}
-/* Ensure the flip card matches the rest of the services */
-.flip-card {
-    perspective: 1000px;
-    width: 280px; /* Match width of .service */
-    height: 300px; /* Match height */
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect for consistency */
-.flip-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 4px 8px rgba(255, 215, 0, 0.4);
-}
-
-/* Inner container for flipping */
-.flip-card-inner {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    border-radius: 12px;
-}
-
-/* Flip effect */
-.flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-/* Front and Back Styles */
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(255, 215, 0, 0.3);
-    border: 2px solid rgba(255, 215, 0, 0.5);
-}
-
-/* Ensure front matches .service */
-.flip-card-front {
-    background: linear-gradient(135deg, #822B22 0%, #A34F2A 100%);
-    color: white;
-}
-
-/* Ensure back matches front but flipped */
-.flip-card-back {
-    background: linear-gradient(135deg, #A34F2A 0%, #822B22 100%);
-    color: #fff;
-    transform: rotateY(180deg);
-}
-
-/* Typography Adjustments */
-.flip-card-front h2,
-.flip-card-back h2 {
-    font-family: "Spectral", serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: #FFD700;
-    margin-bottom: 8px;
-}
-
-.flip-card-front p,
-.flip-card-back p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
-
-/* Lighter gold shine sweeping diagonally like .service */
-.flip-card::before {
-    content: "";
-    position: absolute;
-    top: -150%;
-    left: -150%;
-    width: 250%;
-    height: 250%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
-    transform: rotate(25deg);
-    animation: diagonalShine 3s infinite linear;
 }
 
 /* Shine animation */
@@ -396,116 +361,13 @@ header img {
         font-size: 14px;
         color: #f8f3ee;
         letter-spacing: 0.5px;
+    }    
+
+        /* Footer */
+        footer {
+            font-size: 14px;
+        }
     }
-    /* Ensure the flip card matches the rest of the services */
-.flip-card {
-    perspective: 1000px;
-    width: 280px; /* Match width of .service */
-    height: 300px; /* Match height */
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect for consistency */
-.flip-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 4px 8px rgba(255, 215, 0, 0.4);
-}
-
-/* Inner container for flipping */
-.flip-card-inner {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    border-radius: 12px;
-}
-
-/* Flip effect */
-.flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-/* Front and Back Styles */
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(255, 215, 0, 0.3);
-    border: 2px solid rgba(255, 215, 0, 0.5);
-}
-
-/* Ensure front matches .service */
-.flip-card-front {
-    background: linear-gradient(135deg, #822B22 0%, #A34F2A 100%);
-    color: white;
-}
-
-/* Ensure back matches front but flipped */
-.flip-card-back {
-    background: linear-gradient(135deg, #A34F2A 0%, #822B22 100%);
-    color: #fff;
-    transform: rotateY(180deg);
-}
-
-/* Typography Adjustments */
-.flip-card-front h2,
-.flip-card-back h2 {
-    font-family: "Spectral", serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: #FFD700;
-    margin-bottom: 8px;
-}
-
-.flip-card-front p,
-.flip-card-back p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
-
-/* Lighter gold shine sweeping diagonally like .service */
-.flip-card::before {
-    content: "";
-    position: absolute;
-    top: -150%;
-    left: -150%;
-    width: 250%;
-    height: 250%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
-    transform: rotate(25deg);
-    animation: diagonalShine 3s infinite linear;
-}
-
-/* Shine animation */
-@keyframes diagonalShine {
-    0% {
-        top: -150%;
-        left: -150%;
-    }
-    100% {
-        top: 150%;
-        left: 150%;
-    }
-}
-
-    /* Footer */
-    footer {
-        font-size: 14px;
-    }
-}
 
 /* Mobile Navigation (Hamburger Menu) */
 @media screen and (max-width: 768px) {
@@ -544,3 +406,5 @@ header img {
         display: none;
     }
 }
+
+
