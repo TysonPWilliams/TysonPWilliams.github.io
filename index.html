@@ -15,6 +15,7 @@
 </head>
 <body>
     <script src="script.js"></script>
+    <script src="card-flip.js"></script>
     <div class="announcement-bar poppins-regular">
         <p>Shop open Wednesday's 9am-11am.</p>
     </div>
@@ -59,19 +60,34 @@
         <h1 class="spectral-regular">WELCOME TO LITTLE TEMPUS</h1>
         <p class="poppins-regular">Located in the heart of Sun Country, we offer a wide range of beauty services designed to help you look and feel your best. We use only the brands we love and trust—Pure Fiji, Dermalogica, Azure Tan, and Youngblood Mineral Cosmetics—ensuring every treatment is a pampering experience.</p>
         <p class="poppins-regular">Book your appointment today and treat yourself to the beauty you deserve.</p>  
+        <div class="book-now">
+            <a href="#" class="poppins-regular">Book Now</a>
+        </div>
     </section>
 
     <!-- Services Section -->
     <section class="services">
         <div class="service">
             <h2>The Facial Experience</h2>
-            <p>A treatment designed to refresh and rejuvenate your skin.</p>
+            <p>A journey where your skilled therapist works to alleviate antioxidant stress, leaving your complexion radiant and refreshed.</p>
             <p><strong>From $175</strong></p>
         </div>
-        <div class="service">
-            <h2>Brows and Lashes</h2>
-            <p>Enhance your natural beauty with our professional brow and lash services.</p>
-        </div>
+        <div class="service flip-card" id="brows-lashes">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h2>Brows and Lashes</h2>
+                    <p>Enhance your natural beauty with our professional brow and lash services. (Click for more info)</p>
+                </div>
+                <div class="flip-card-back">
+                    <h2>Brows and Lashes</h2>
+                    <p><strong>Brow Wax/Shape</strong> (consult and brow planning included in each booking) - $34</p>
+                    <p><strong>Brow Hybrid Stain</strong> (lasts twice as long as tint) - $38</p>
+                    <p><strong>Lash Tint</strong> (dyes lashes to a jet black color) - $38</p>
+                    <p><strong>Lash Lift</strong> (perms lashes in a lifted curl, lasts 6-8 weeks) - $70</p>
+                    <p><strong>Lash Extensions</strong> - $120</p>
+                </div>
+            </div>
+            </div>
         <div class="service">
             <h2>Professional Makeup</h2>
             <p>Long-lasting, flawless makeup for any occasion.</p>
