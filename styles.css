@@ -111,14 +111,14 @@ nav ul li a:hover {
     color: #f8f3ee;
 }
 .img-renee {
-    padding: 40px 20px; /* Adds spacing around the section */
+    padding: 40px 20px;
     position: relative;
     overflow: hidden;
-    background-image: url('images/renae_picture.jpg'); /* Add your image here */
-    background-size: cover; /* Ensures the image covers the container */
-    background-position: center center; /* Keeps the focal point in the middle */
-    background-repeat: no-repeat; /* Prevents image repetition */
-    height: 100vh; /* Adjust the height to ensure it's visible */
+    background-image: url('images/renae_picture.jpg');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    height: 20vh;
 }
 /* Hero Section */
 .hero {
@@ -199,6 +199,9 @@ header img {
         gap: 10px;
         padding: 0;
     }
+    .main-heading .logo {
+        width: 60vw;
+    }
     .book-now {
         font-size: 80%;
         justify-content: center;
@@ -221,7 +224,7 @@ header img {
         font-size: 28px;
     }
     .hero p {
-        font-size: 16px;
+        font-size: 10pt;
     }
 
     /* Services */
@@ -230,8 +233,69 @@ header img {
         align-items: center;
     }
     .service {
-        width: 90%;
+        background: linear-gradient(135deg, #822B22 0%, #A34F2A 100%);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(255, 215, 0, 0.3); /* Soft golden glow */
+        width: 280px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid rgba(255, 215, 0, 0.5); /* Gold shimmer */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    
+    /* Lighter gold shine sweeping diagonally */
+    .service::before {
+        content: "";
+        position: absolute;
+        top: -150%;
+        left: -150%;
+        width: 250%;
+        height: 250%;
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
+        transform: rotate(25deg);
+        animation: diagonalShine 3s infinite linear;
+    }
+    
+    /* Fancy hover effect */
+    .service:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 4px 8px rgba(255, 215, 0, 0.4);
+    }
+    
+    /* Diagonal shine animation */
+    @keyframes diagonalShine {
+        0% {
+            top: -150%;
+            left: -150%;
+        }
+        100% {
+            top: 150%;
+            left: 150%;
+        }
+    }
+    
+    /* Typography improvements */
+    .service h2 {
+        font-family: "Spectral", serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #FFD700; /* Gold text */
+        /* letter-spacing: -0.8px; */
+        margin-bottom: 8px;
+    }
+    
+    .service p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        color: #f8f3ee;
+        letter-spacing: 0.5px;
+    }
+    
+    
+    
+    
 
     /* Footer */
     footer {
