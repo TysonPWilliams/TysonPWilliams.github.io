@@ -116,9 +116,9 @@ nav ul li a:hover {
     overflow: hidden;
     background-image: url('images/renae_picture.jpg');
     background-size: cover;
-    background-position: center center; 
+    background-position: center 35%; 
     background-repeat: no-repeat;
-    height: 20vh;
+    height: 40vh;
 }
 /* Hero Section */
 .hero {
@@ -147,42 +147,60 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 40px;
+    /* padding: 40px; */
     justify-content: center;
 }
 
 /* Styling for the .service container */
 .service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     width: 250px; /* Same size as other service cards */
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service, .flip-card{
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 300px;
 }
 
 /* Flip card container */
 .flip-card {
+    padding: 0;
     perspective: 1000px; /* Create a 3D space for the flip effect */
-    width: 100%;         /* Make it fit the .service container */
-    height: 300px;       /* Adjust height to match other .service cards */
-    display: flex;
+    width: 250px;         /* Make it fit the .service container */      /* Adjust height to match other .service cards */
     justify-content: center;
     align-items: center;
+    display: flex;
+    min-height: 300px;
 }
 
+.service, .flip-card{
+    flex: 1 1 250px;
+}
 /* Inner part of the flip card */
 .flip-card-inner {
+    padding: 0;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d; /* Enable 3D effect */
-    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, scale 0.3s ease;
     border-radius: 8px; /* Keep rounded corners */
     position: relative;
 }
 
 /* Front of the flip card */
 .flip-card-front, .flip-card-back {
+    padding: 10px;
     position: absolute;
     top: 0;
     left: 0;
@@ -190,6 +208,7 @@ nav ul li a:hover {
     height: 100%;
     backface-visibility: hidden; /* Hide the back when flipped */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 8px; /* Ensure the corners stay rounded */
@@ -199,20 +218,24 @@ nav ul li a:hover {
 .flip-card-front {
     background: linear-gradient(135deg, #822B22 0%, #A34F2A 100%);
     color: white;
-    padding: 10px;
+    padding: 0;
 }
 
 /* Back side background styling */
 .flip-card-back {
     background: linear-gradient(135deg, #A34F2A 0%, #822B22 100%);
     color: white;
-    padding: 10px;
     transform: rotateY(180deg); /* Initially hidden behind the front */
+    font-size: 12px;
+}
+
+.flip-card-back p:nth-child(6){
+    padding-bottom: 10px;
 }
 
 /* Flip effect when the card is clicked */
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg); /* Flip the card on hover */
+.flip-card-inner.flipped {
+    transform: rotateY(180deg) scale(1.4); /* Flip the card on hover */
 }
 
 
@@ -371,40 +394,67 @@ header img {
 
 /* Mobile Navigation (Hamburger Menu) */
 @media screen and (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide menu initially */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
+    .hamburger{
+        font-size: 24px;
+        color: #822B22;
+        cursor: pointer;
+    }
+    .fullscreen-menu {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        background: #f8f3ee;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        background: rgba(255, 245, 230, 0.95); /* Slightly transparent background */
+        backdrop-filter: blur(8px); /* Blurred background effect */
+        z-index: 1000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    nav ul.show {
+
+    /* Navigation links */
+    .fullscreen-menu ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .fullscreen-menu ul li {
+        margin: 20px 0;
+    }
+
+    .fullscreen-menu ul li a {
+        font-size: 24px;
+        color: #822B22;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .fullscreen-menu ul li a:hover {
+        color: #A34F2A;
+    }
+
+    /* Close button */
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 32px;
+        color: #822B22;
+        cursor: pointer;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .close-menu:hover {
+        color: #A34F2A;
+    }
+
+    /* Show fullscreen menu */
+    .fullscreen-menu.show {
         display: flex;
     }
-    .hamburger {
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
-        color: #822B22;
-        text-align: center;
-        padding: 10px;
-    }
-    .close-menu {
-        display: none; /* Hide close icon by default */
-    }
-    nav ul.show .close-menu {
-        display: block; /* Show close icon when menu is open */
-    }
 }
-
-/* Hide hamburger on larger screens */
-@media screen and (min-width: 769px) {
-    .hamburger {
-        display: none;
-    }
-}
-
-
