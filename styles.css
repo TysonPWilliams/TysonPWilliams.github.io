@@ -458,6 +458,10 @@ header img {
         display: flex;
     }
 
+    .fullscreen-menu.show .socials{
+        padding-top: 20vh;
+    }
+
     /* .flip-card {
         perspective: 1000px;
         position: relative;
