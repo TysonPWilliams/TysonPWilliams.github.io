@@ -19,20 +19,29 @@ document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("fullScreenModal");
     const closeModal = document.querySelector(".close-modal");
 
-    // Open modal when clicking on the Brows and Lashes tile
-    browsLashesCard.addEventListener("click", function() {
-        modal.style.display = "flex";
-    });
+    if (modal) {
+        modal.style.display = "none"; // Ensure the modal stays hidden on page load
+    }
 
-    // Close modal when clicking the "×" button
-    closeModal.addEventListener("click", function() {
-        modal.style.display = "none";
-    });
+    // Ensure elements exist before adding event listeners to prevent errors
+    if (browsLashesCard && modal) {
+        browsLashesCard.addEventListener("click", function() {
+            modal.style.display = "flex"; // Show the modal when card is clicked
+        });
+    }
 
-    // Close modal when clicking outside the modal-content
-    modal.addEventListener("click", function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
+    if (closeModal && modal) {
+        closeModal.addEventListener("click", function() {
+            modal.style.display = "none"; // Hide the modal when the close button is clicked
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none"; // Hide modal when clicking outside of modal-content
+            }
+        });
+    }
 });
+
